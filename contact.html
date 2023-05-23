@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <title>Contact me</title>
+    <link rel="stylesheet" href="css/contact.css" />
+    <script
+      src="https://kit.fontawesome.com/d0ff47b7d6.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <ul>
+          <li>
+            <a href="index.html">
+              <img
+                style="width: 40px; margin-right: 20px"
+                src="Image/brandred.png"
+                alt="Dumbways"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="blog.html">Blog</a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <a href="form.html">Contact Me</a>
+      </div>
+    </nav>
+    <h1>GET IN TOUCH</h1>
+    <form name="myForm" action="" onsubmit="return validateForm()">
+      <div>
+        <label for="input-name">Name</label>
+        <input name="input-name" id="input-name" height="100px" type="text" />
+      </div>
+      <div>
+        <label for="input-email">Email</label>
+        <input name="input-email" id="input-email" type="email" />
+      </div>
+      <div>
+        <label for="input-phone">Phone Number</label>
+        <input name="input-phone" id="input-phone" type="number" />
+      </div>
+      <div>
+        <label for="input-subject">Subject</label>
+        <select name="input-subject" id="input-subject">
+          <option value="" hidden>Select</option>
+          <option value="Frontend">Frontend</option>
+          <option value="Backend">Backend</option>
+          <option value="Fullstack">Fullstack</option>
+        </select>
+      </div>
+      <div>
+        <label for="input-message">Your Messages</label>
+        <textarea
+          name="input-message"
+          id="input-message"
+          cols="30"
+          rows="5"
+        ></textarea>
+      </div>
+      <button onclick="submitData()">Submit</button>
+    </form>
+    <script src="js/contact.js"></script>
+  </body>
+</html>
