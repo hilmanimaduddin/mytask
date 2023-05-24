@@ -2,6 +2,7 @@
   <head>
     <title>Contact me</title>
     <link rel="stylesheet" href="css/contact.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
     <script
       src="https://kit.fontawesome.com/d0ff47b7d6.js"
       crossorigin="anonymous"
@@ -21,17 +22,32 @@
             </a>
           </li>
           <li>
-            <a href="index.html">Home</a>
+            <a class="kiwo" href="index.html">Home</a>
           </li>
           <li>
-            <a href="blog.html">Blog</a>
+            <a class="kiwo" href="blog.html">Blog</a>
           </li>
         </ul>
       </div>
       <div class="nav-right">
-        <a href="form.html">Contact Me</a>
+        <a class="kana" href="contact.html">Contact Me</a>
+      </div>
+      <div class="nav-kanan" id="barsmenu">
+        <button
+          style="background-color: transparent; border: none; cursor: pointer"
+          onclick="openHamburger()"
+        >
+          <i class="fa-2x fa-solid fa-bars"></i>
+        </button>
       </div>
     </nav>
+
+    <div class="hamburger-nav" id="hamburger-nav">
+      <a href="index.html">Home</a>
+      <a href="blog1.html">Blog</a>
+      <a class="active" href="#Contact">Contact</a>
+    </div>
+
     <h1>GET IN TOUCH</h1>
     <form name="myForm" action="" onsubmit="return validateForm()">
       <div>
@@ -67,5 +83,6 @@
       <button onclick="submitData()">Submit</button>
     </form>
     <script src="js/contact.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>

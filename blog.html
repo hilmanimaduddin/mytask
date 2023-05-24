@@ -1,7 +1,9 @@
 <html>
   <head>
-    <title>Blog Ini</title>
+    <title>My Blog</title>
     <link rel="stylesheet" href="css/blog.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/mobile.css" />
     <script
       src="https://kit.fontawesome.com/d0ff47b7d6.js"
       crossorigin="anonymous"
@@ -21,17 +23,32 @@
             </a>
           </li>
           <li>
-            <a href="index.html">Home</a>
+            <a class="kiwo" href="index.html">Home</a>
           </li>
           <li>
-            <a href="blog.html">Blog</a>
+            <a class="kiwo" href="blog1.html">Blog</a>
           </li>
         </ul>
       </div>
       <div class="nav-right">
-        <a href="form.html">Contact Me</a>
+        <a class="kana" href="contact.html">Contact Me</a>
+      </div>
+      <div class="nav-kanan" id="barsmenu">
+        <button
+          style="background-color: transparent; border: none; cursor: pointer"
+          onclick="openHamburger()"
+        >
+          <i class="fa-2x fa-solid fa-bars"></i>
+        </button>
       </div>
     </nav>
+
+    <div class="hamburger-nav" id="hamburger-nav">
+      <a href="index.html">Home</a>
+      <a class="active" href="#blog">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
     <div class="bodi">
       <div class="title">
         <h1>Dumbways Web App</h1>
@@ -138,9 +155,8 @@
           ducimus. Cum distinctio quasi dolorum et architecto dolorem doloribus
           ducimus quo?
         </p>
-        <a href="blog1.html">blog1</a>
       </div>
     </div>
-    <script src="js/blog.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>

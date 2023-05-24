@@ -1,7 +1,9 @@
 <html>
   <head>
-    <title>Blog Ini</title>
+    <title>My Blog</title>
     <link rel="stylesheet" href="css/blog1.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/mobile.css" />
     <script
       src="https://kit.fontawesome.com/d0ff47b7d6.js"
       crossorigin="anonymous"
@@ -21,17 +23,32 @@
             </a>
           </li>
           <li>
-            <a href="index.html">Home</a>
+            <a class="kiwo" href="index.html">Home</a>
           </li>
           <li>
-            <a href="blog.html">Blog</a>
+            <a class="kiwo" href="#blog">Blog</a>
           </li>
         </ul>
       </div>
       <div class="nav-right">
-        <a href="form.html">Contact Me</a>
+        <a class="kana" href="contact.html">Contact Me</a>
+      </div>
+      <div class="nav-kanan" id="barsmenu">
+        <button
+          style="background-color: transparent; border: none; cursor: pointer"
+          onclick="openHamburger()"
+        >
+          <i class="fa-2x fa-solid fa-bars"></i>
+        </button>
       </div>
     </nav>
+
+    <div class="hamburger-nav" id="hamburger-nav">
+      <a href="index.html">Home</a>
+      <a class="active" href="#blog">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
     <h1>ADD MY PROJECT</h1>
     <div class="bodi">
       <form onsubmit="addBlog(event)">
@@ -113,7 +130,7 @@
           <img src="Image/Indonesia.jpg" alt="anak kecil" />
         </div>
         <div class="list2">
-          <h4><a href="#web">Asyiknya Bermain Waktu Kecil</a></h4>
+          <h4><a href="blog.html">Asyiknya Bermain Waktu Kecil</a></h4>
           <p>Durasi :</p>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
@@ -135,10 +152,10 @@
       </div>
       <div class="under">
         <div class="list1">
-          <img src="Image/Indonesia.jpg" alt="anak kecil" />
+          <img src="Image/Masakecil.jpg" alt="anak kecil" />
         </div>
         <div class="list2">
-          <h4><a href="#web">Asyiknya Bermain Waktu Kecil</a></h4>
+          <h4><a href="blog.html">Asyiknya Bermain Waktu Kecil</a></h4>
           <p>Durasi :</p>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
@@ -160,10 +177,10 @@
       </div>
       <div class="under">
         <div class="list1">
-          <img src="Image/Indonesia.jpg" alt="anak kecil" />
+          <img src="Image/masakecill.png" alt="anak kecil" />
         </div>
         <div class="list2">
-          <h4><a href="#web">Asyiknya Bermain Waktu Kecil</a></h4>
+          <h4><a href="blog.html">Asyiknya Bermain Waktu Kecil</a></h4>
           <p>Durasi :</p>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
@@ -188,5 +205,6 @@
       <i class="fa-brands fa-react" style="color: #000000"></i>
     </div>
     <script src="js/blog1.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
