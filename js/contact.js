@@ -42,4 +42,5 @@ function submitData() {
   };
 
   console.log(emailer);
+  console.log(a);
 }
