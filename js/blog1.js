@@ -8,18 +8,22 @@ function addBlog(event) {
   let endDate = new Date(document.getElementById("input-date2").value);
   let description = document.getElementById("description").value;
   let image1 = document.getElementById("upload-image").files;
+  let waktuu = new Date();
 
-  if (project === "") {
-    return alert("Mohon projeknya diisi dulu ya..");
-  } else if (startDate === "") {
-    return alert("Mohon tanggalnya diisi dulu ya...");
-  } else if (endDate === "") {
-    return alert("Mohon tanggalnya diisi dulu ya...");
-  } else if (description === "") {
-    return alert("Mohon deskripsinya diisi dulu ya...");
-  } else if (image1 == 0) {
-    return alert("Mohon fotonya diupload ya...");
-  }
+  // if (project === "") {
+  //   return alert("Mohon projeknya diisi dulu ya..");
+  // } else if (startDate === "") {
+  //   return alert("Mohon tanggalnya diisi dulu ya...");
+  // } else if (endDate === "") {
+  //   return alert("Mohon tanggalnya diisi dulu ya...");
+  // } else if (description === "") {
+  //   return alert("Mohon deskripsinya diisi dulu ya...");
+  // } else if (image1 == "") {
+  //   return alert("Mohon fotonya diupload ya...");
+  // }
+
+  image1 = URL.createObjectURL(image1[0]);
+  console.log(image1);
 
   const nodeJs = '<i class="fa-brands fa-node-js" style="color: #000000;"></i>';
   const reactJs = '<i class="fa-brands fa-react" style="color: #000000;"></i>';
@@ -39,10 +43,7 @@ function addBlog(event) {
 
   let waktu = Math.abs(endDate - startDate);
   let bulan = Math.floor(waktu / (1000 * 60 * 60 * 24 * 30));
-  let hari = Math.floor(waktu / (1000 * 60 * 60 * 24)) % 30;
-
-  image1 = URL.createObjectURL(image1[0]);
-  console.log(image1);
+  let hari = Math.floor(waktu / (1000 * 60 * 60 * 24));
 
   let cobaa = {
     project,
@@ -56,6 +57,7 @@ function addBlog(event) {
     Typescriptcek,
     bulan,
     hari,
+    waktuu,
   };
 
   console.log(cobaa);
@@ -78,7 +80,9 @@ function rendercobaa() {
         </div>
         <div class="list2">
          <h4><a href="#web">${dataBlog[index].project}</a></h4>
-          <p>Durasi : ${dataBlog[index].bulan} Bulan, ${dataBlog[index].hari} Hari</p>
+          <p>Durasi : ${dataBlog[index].bulan} Bulan, ${
+      dataBlog[index].hari
+    } Hari</p>
           <p>
             ${dataBlog[index].description}
           </p>
@@ -92,9 +96,41 @@ function rendercobaa() {
         <div class="list4">
          <button>Edit</button>
          <button>Delete</button>
-       </div>
+        </div>
+        <div style="float: right; margin: 10px">
+          <p style="font-size: 15px; color: grey">${getDistanceTime(
+            dataBlog[index].waktuu
+          )}</p>
+        </div>
       </div>
     </div>
     `;
   }
 }
+
+function getDistanceTime(time) {
+  let timeNow = new Date();
+  let timePost = time;
+
+  let distance = timeNow - timePost;
+  console.log(distance);
+
+  let distanceDay = Math.floor(distance / (1000 * 60 * 60 * 24));
+  let distanceHour = Math.floor(distance / (1000 * 60 * 60));
+  let distanceMinute = Math.floor(distance / (1000 * 60));
+  let distanceSecond = Math.floor(distance / 1000);
+
+  if (distanceDay > 0) {
+    return `${distanceDay} Day ago`;
+  } else if (distanceHour > 0) {
+    return `${distanceHour} Hour ago`;
+  } else if (distanceMinute > 0) {
+    return `${distanceMinute} Minute ago`;
+  } else {
+    return `${distanceSecond} Second ago`;
+  }
+}
+
+setInterval(function () {
+  rendercobaa();
+}, 5000);
